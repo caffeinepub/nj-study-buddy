@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Purple primary */
+    --primary: 0.38 0.22 295;
+    --primary-foreground: 0.98 0 0;
+    /* Hot pink secondary */
+    --secondary: 0.66 0.22 345;
+    --secondary-foreground: 0.98 0 0;
+    /* Soft blush background */
+    --background: 0.96 0.02 350;
+    --foreground: 0.14 0 0;
+    /* White cards */
+    --card: 1 0 0;
+    --card-foreground: 0.14 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.14 0 0;
+    /* Muted lavender */
+    --muted: 0.93 0.03 290;
+    --muted-foreground: 0.45 0 0;
+    /* Lavender accent */
+    --accent: 0.9 0.06 290;
+    --accent-foreground: 0.14 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.91 0.03 310;
+    --input: 0.91 0.03 310;
+    --ring: 0.38 0.22 295;
+    --chart-1: 0.38 0.22 295;
+    --chart-2: 0.66 0.22 345;
+    --chart-3: 0.7 0.18 160;
+    --chart-4: 0.74 0.14 200;
+    --chart-5: 0.8 0.14 60;
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.14 0 0;
+    --sidebar-primary: 0.38 0.22 295;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.93 0.03 290;
+    --sidebar-accent-foreground: 0.14 0 0;
+    --sidebar-border: 0.91 0.03 310;
+    --sidebar-ring: 0.38 0.22 295;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(
+      135deg,
+      oklch(0.95 0.04 350) 0%,
+      oklch(0.92 0.06 290) 100%
+    );
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      oklch(0.95 0.04 350) 0%,
+      oklch(0.92 0.06 290) 100%
+    );
+  }
+  .card-glow {
+    box-shadow: 0 4px 24px oklch(0.66 0.22 345 / 0.15), 0 1px 4px
+      oklch(0 0 0 / 0.05);
+  }
+  .card-glow-purple {
+    box-shadow: 0 4px 24px oklch(0.38 0.22 295 / 0.2), 0 1px 4px
+      oklch(0 0 0 / 0.05);
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.38 0.22 295),
+      oklch(0.66 0.22 345)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      oklch(0.38 0.22 295),
+      oklch(0.48 0.24 295)
+    );
+  }
+  .btn-pink {
+    background: linear-gradient(
+      135deg,
+      oklch(0.66 0.22 345),
+      oklch(0.72 0.2 345)
+    );
+  }
+  .sparkle::before {
+    content: "✨";
+    margin-right: 0.25rem;
+  }
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+}
